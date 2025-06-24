@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Servizi di Analisi Testo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      label {
+        font-weight: bold;
+      }
+      select, input, button {
+        padding: 5px;
+        margin: 10px 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="http://127.0.0.1:8000/summary" method="post">
+        <div>
+          <label for="input_text">Testo da analizzare:</label><br>
+          <textarea name="input_text" rows="5" cols="50" placeholder="Inserisci il testo"></textarea>
+        </div>
+        <div>
+          <label for="service_type">Tipo di servizio:</label>
+          <select id="service_type" name="service_type">
+            <option value="summary">Riassunto</option>
+            <option value="sentiment">Analisi del Sentimento</option>
+          </select>
+        </div>
+        <button type="submit">Invia</button>
+      </form>
+    </div>
+  </body>
+</html>
