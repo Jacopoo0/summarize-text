@@ -1,67 +1,67 @@
-# Servizi di Analisi Testo con FastAPI e HuggingFace
+# Text Analysis Services with FastAPI and HuggingFace
 
-Questo progetto offre un semplice servizio web per l'analisi del testo, tra cui riassunto e analisi del sentimento, utilizzando FastAPI e i modelli di HuggingFace Transformers.
+This project provides a simple web service for text analysis, including summarization and sentiment analysis, using FastAPI and HuggingFace Transformers.
 
-## Struttura della Cartella
+## Folder Structure
 
 ```
 huggingface/
 │
-├── main.py                  # Applicazione FastAPI principale
-├── requirements.txt         # Dipendenze Python necessarie
+├── main.py                  # Main FastAPI application
+├── requirements.txt         # Required Python dependencies
 └── templete/
-    ├── index.html           # Pagina principale con form di input
-    └── summary.html         # Pagina di visualizzazione del risultato
+    ├── index.html           # Main page with input form
+    └── summary.html         # Result display page
 ```
 
-## Requisiti
+## Requirements
 
 - Python 3.8+
-- Le dipendenze elencate in `requirements.txt`:
+- The dependencies listed in `requirements.txt`:
   - fastapi
   - transformers
   - jinja2
   - uvicorn
 
-## Installazione
+## Installation
 
-1. **Clona la repository o copia i file nella tua cartella di lavoro.**
-2. **Installa le dipendenze:**
+1. **Clone the repository or copy the files into your working directory.**
+2. **Install the dependencies:**
    ```sh
    pip install -r requirements.txt
    ```
 
-## Avvio del Server
+## Running the Server
 
-Per avviare il server FastAPI, esegui:
+To start the FastAPI server, run:
 
 ```sh
 uvicorn main:app --reload
 ```
 
-Il server sarà disponibile su [http://127.0.0.1:8000](http://127.0.0.1:8000).
+The server will be available at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-## Come Funziona
+## How It Works
 
-1. **Accesso alla Home:**  
-   Vai su `http://127.0.0.1:8000` per visualizzare la pagina principale (`index.html`), dove puoi inserire il testo da analizzare e scegliere il tipo di servizio (riassunto o analisi del sentimento).
+1. **Access the Home Page:**  
+   Go to `http://127.0.0.1:8000` to see the main page (`index.html`), where you can enter the text to analyze and select the service type (summarization or sentiment analysis).
 
-2. **Invio del Testo:**  
-   Dopo aver inserito il testo e selezionato il servizio, premi "Invia". Il form invia una richiesta POST a `/summary`.
+2. **Submit Text:**  
+   After entering your text and selecting the service, click "Submit". The form sends a POST request to `/summary`.
 
-3. **Elaborazione:**  
-   - Se scegli "Riassunto", viene utilizzato il pipeline di HuggingFace per generare un riassunto del testo.
-   - (Da implementare: se scegli "Analisi del Sentimento", verrà eseguita l'analisi del sentimento.)
+3. **Processing:**  
+   - If you select "Summarization", the HuggingFace pipeline is used to generate a summary of the text.
+   - (To be implemented: if you select "Sentiment Analysis", sentiment analysis will be performed.)
 
-4. **Risultato:**  
-   Il risultato viene mostrato in una nuova pagina (`summary.html`).
+4. **Result:**  
+   The result is displayed on a new page (`summary.html`).
 
-## Note
+## Notes
 
-- Puoi aggiungere altri servizi modificando la logica in `main.py` e aggiornando il template HTML.
-- Assicurati che la cartella `templete` sia scritta correttamente e contenga i file HTML necessari.
+- You can add more services by modifying the logic in `main.py` and updating the HTML templates.
+- Make sure the `templete` folder is spelled correctly and contains the necessary HTML files.
 
-## Esempio di requirements.txt
+## Example requirements.txt
 
 ```
 fastapi
@@ -71,4 +71,5 @@ uvicorn
 ```
 
 ---
+
 
