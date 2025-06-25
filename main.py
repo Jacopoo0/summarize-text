@@ -19,4 +19,9 @@ def summary(request: Request, input_text: str = Form(...), service_type: str = F
         generator = pipeline("summarization")
         riassunto = generator(input_text)
         return templates.TemplateResponse(request=request, name="summary.html", context={'summary': riassunto[0]["summary_text"]})
+    
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", reload=True)
+
 
